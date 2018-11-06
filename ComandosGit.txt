@@ -1,0 +1,8 @@
+
+git init
+git status
+git add .
+git commit -m "first commit"
+git status
+git remote add origin https://github.com/HigorAlmeidaGomes/JavaWeb.git
+git push -u origin master
