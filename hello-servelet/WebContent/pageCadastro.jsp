@@ -5,11 +5,11 @@
 <head>
 
 <script type="text/javascript">
-	function enviarCadastro(nome, profissao,salario) {
+	function enviarCadastro(nome, profissao, salario) {
 		var url = "HelloServelt?nome=" + nome.value + "&profissao="
-				+ profissao.value+ "&salario="+salario.value
-				
-				console.log(url)
+				+ profissao.value + "&salario=" + salario.value
+
+		console.log(url)
 		var xmlhttp = new XMLHttpRequest();
 
 		xmlhttp.onreadystatechange = function() {
