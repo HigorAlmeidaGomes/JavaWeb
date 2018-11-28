@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<HEAD>
+<TITLE>Listagem</TITLE>
+</HEAD>
+
+<BODY>
+	<H3>Lista Livros</H3>
+
+	<h:form rendered="#{not empty livroMB.listarLivro}">
+		<h:dataTable value="#{livroMB.listarLivro}" var="item">
+			<h:column>
+				<f:facet name="header">Autor</f:facet>#{item.autor}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Titulo</f:facet>#{item.titulo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Descricao</f:facet>#{item.descricao}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Preco</f:facet>#{item.preco}
+			</h:column>
+
+		</h:dataTable>
+	</h:form>
+	<h:panelGroup rendered="#{empty livroMB.listarLivro}">
+		<p>Sem Estudantes ! por favor adicione;</p>
+	</h:panelGroup>
+</BODY>
+</html>

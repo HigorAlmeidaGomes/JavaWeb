@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:messages id="messages" showDetail="true" autoUpdate="true"
+			closable="true"></p:messages>
+		<p:commandButton value="Mensagem Informativa"
+			actionListener="#{mensagens.info}"></p:commandButton>
+		<p:commandButton value="Mensagem de Erro"
+			actionListener="#{mensagens.erro}"></p:commandButton>
+		<p:commandButton value="Mensagem de Aviso"
+			actionListener="#{mensagens.aviso}"></p:commandButton>
+		<p:commandButton value="Mensagem Fatal"
+			actionListener="#{mensagens.fatal}"></p:commandButton>
+	</h:form>
+
+</h:body>
+</html>
