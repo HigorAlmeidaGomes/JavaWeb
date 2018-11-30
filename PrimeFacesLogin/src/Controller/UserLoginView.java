@@ -34,12 +34,13 @@ public class UserLoginView {
 		FacesMessage message = null;
 		boolean loggedIn = false;
 
-		if (username != null && username.equals("Higor") && password != null && password.equals("123456")) {
+		if (username != null && username.equals("Higor") && password != null && password.equals("123")) {
 			loggedIn = true;
 			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Seja Bem-Vindo -", username);
 		} else {
 			loggedIn = false;
 			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
+			
 		}
 
 		FacesContext context = FacesContext.getCurrentInstance();
