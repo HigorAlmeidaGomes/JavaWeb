@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+     
+    <h:head>
+     <h:outputStylesheet library="css" name="bootstrap.css"/>
+     <title>JSF JPA CRUD EXAMPLE</title>
+	     <style type="text/css">
+		     	.btnWidth{
+		     	 	width: 80%;
+		     	}
+		     	
+		     	.com-sm-updated{
+		     	 	passing-top:7px;
+		     	}
+		     	
+		        .com-sm-updated a{
+		     	 	margin-left:30px;
+		     	 	text-decoration: none !important;
+		     	}
+		     	
+		     	.com-sm-27{
+		     		width: 27% !important;
+		     	}
+	     </style>
+    </h:head>
+ 
+    <h:body>
+	<div class="col-sm-8">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Novo Usuario</div>
+			<div class="panel-body">
+			
+        <h:form styleClass="form-horizontal">
+        	<h:messages class="text text-danger"/>
+		 <div class="row">
+			<fieldset>
+			
+			<div class="form-group">
+			    <h:outputLabel for="usuario-id" styleClass="control-labbel col-sm-4">Id:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="usuario-id" disabled="true" value="#{usuarioMB.usuario.id}" styleClass="form-control" />
+			    </div>
+			</div>
+			
+			<div class="form-group">
+			    <h:outputLabel for="usuario-name" styleClass="control-labbel col-sm-4">Nome usuário:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="usuario-name" value="#{usuarioMB.usuario.nomeUsuario}" styleClass="form-control" required="true" requiredMessage="O nome do usuário não pode estar vazio"/>
+			    </div>
+			    <h:message for="usuario-name" styleClass="text text-danger" />
+			</div>
+			
+			<div class="form-group">
+			    <h:outputLabel for="matricula" styleClass="control-labbel col-sm-4">Matricula:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="usuario-matricula" value="#{usuarioMB.usuario.matricula}" styleClass="form-control" required="true" requiredMessage="A matricula não pode estar vazia"/>
+			    </div>
+			    <h:message for="usuario-matricula" styleClass="text text-danger" />
+			</div>		
+	
+	
+			<div class="form-group">
+			    <h:outputLabel for="senha" styleClass="control-labbel col-sm-4">Senha:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="usuario-senha" value="#{usuarioMB.usuario.senha}" styleClass="form-control" required="true" requiredMessage="A Senha não pode estar vazia"/>
+			    </div>
+			    <h:message for="usuario-matricula" styleClass="text text-danger" />
+			</div>	
+			
+			<div class="form-group">
+			    <div class="col-sm-8" align="left">						 
+					 	<h:commandButton action="#{usuarioMB.incluirUsuarioDb(usuarioMB.usuario)}" value="Salvar" styleClass="btn-primary" /> 
+				</div>	 
+			</div>
+			
+			<div class="col-sm-updated">
+				<h:outputLink value="listagemUsuarios.xhtml">Ver lista de usuários</h:outputLink>
+			</div>
+			
+		   </fieldset>
+		 </div>		 	
+        
+        </h:form>
+        
+       </div>
+       </div>
+       </div>     
+    </h:body>
+</html>

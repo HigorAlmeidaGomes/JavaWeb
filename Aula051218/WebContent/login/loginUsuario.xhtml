@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+    </h:head>
+ 
+    <h:body>
+        <h:form>
+        	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"></p:messages>
+        	<p:panelGrid columns="2"/>
+        	
+		    <h:outputLabel for="nomeUsuario" value="Nome Usuario:" />
+		    <p:inputText id="nomeUsuario" value="#{loginMB.usuario.nomeUsuario}" required="true"/>
+		             
+		    <h:outputLabel for="senha" value="Senha:" />
+		    <p:password id="senha" value="#{loginMB.usuario.senha}" required="true"/>
+		            
+			<p:commandButton value="Enviar" icon="ui-icon-star" action="#{loginMB.enviar}" ajax="false" />
+      	
+        </h:form>
+    </h:body>
+</html>

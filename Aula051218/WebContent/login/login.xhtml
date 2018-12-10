@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+    </h:head>
+ 
+    <h:body>
+        <h:form>
+        	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"></p:messages>
+        	
+        	<input type="hidden" name="nomeUsuario" value="admin4" />
+         	<input type="hidden" name="matricula" value="ADM123" />
+
+
+			<h:commandLink action="#{cardLoginMB.enviar}">
+				<p:graphicImage id="city" value="resources/img/insertcard.png" width="250" heigth="190"/>
+			</h:commandLink>
+      	
+        </h:form>
+    </h:body>
+</html>
