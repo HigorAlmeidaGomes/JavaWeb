@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+     
+    <h:head>
+     <h:outputStylesheet library="css" name="bootstrap.css"/>
+     <title>JSF JPA CRUD EXAMPLE</title>
+	     <style type="text/css">
+		     	.tableUpdated{
+		     	 width: 90% !important;
+		     	 margin: 17px 58px 0 !important;
+		     	}
+		     	
+		     	.btnSpace{
+		     		margin: 17px ;
+		     	}
+	     </style>
+    </h:head>
+ 
+    <h:body>
+   	 	<h:outputText value="Login efetuado com sucesso! bem vindo ao sistema!"/>
+    	<center>
+	    	<h2>	
+   	 			<h:outputText value="Lista de produtos cadastrados"/>
+	    	</h2>
+    	</center>
+        <h:form id="ProdutoForm">
+			<h:dataTable id="usuarioTable" value="#{produtoMB.listarProduto}" var="produto" styleClass="table table-striped table-bordered tableUpdated">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{produto.codigo}"></h:outputText>
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">Descricao</f:facet>
+					<h:outputText value="#{produto.descricao}"></h:outputText>
+				</h:column>
+			
+			 	<h:column>
+					<f:facet name="header">Fornecedor</f:facet>
+					<h:outputText value="#{produto.fornecedor}"></h:outputText>
+				</h:column>
+				
+				
+				<h:column>
+					<f:facet name="header">Valor</f:facet>
+					<h:outputText value="#{produto.valor}"></h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Update</f:facet>
+					<h:commandButton action="#{produtoMB.paginaEditar(produto)}" value="Atualizar" styleClass="btn btn-primary" />
+					<f:param name="" value="#{produto.codigo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Delete</f:facet>
+					<h:commandButton action="#{usuarioMB.excluirUsuarioDb(usuario)}" value="Deletar" styleClass="btn btn-danger" />
+				</h:column>
+												
+			</h:dataTable>	
+			<center>
+			  	<h:commandButton action="novoProduto.xhtml?faces-redirect-true" value="Adicionar" styleClass="btn btn-succes btnSpace" />		  	
+			</center> 	
+        </h:form>
+    </h:body>
+</html>

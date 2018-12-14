@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+     
+    <h:head>
+     <h:outputStylesheet library="css" name="bootstrap.css"/>
+     <title>JSF JPA CRUD EXAMPLE</title>
+	     <style type="text/css">
+		     	.btnWidth{
+		     	 	width: 80%;
+		     	}
+		     	
+		     	.com-sm-updated{
+		     	 	passing-top:7px;
+		     	}
+		     	
+		        .com-sm-updated a{
+		     	 	margin-left:30px;
+		     	 	text-decoration: none !important;
+		     	}
+		     	
+		     	.com-sm-27{
+		     		width: 27% !important;
+		     	}
+	     </style>
+    </h:head>
+ 
+    <h:body>
+	<div class="col-sm-8">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Novo Produto</div>
+			<div class="panel-body">
+			
+        <h:form styleClass="form-horizontal">
+        	<h:messages class="text text-danger"/>
+		 <div class="row">
+			<fieldset>
+			
+			<div class="form-group">
+			    <h:outputLabel for="produto-codigo" styleClass="control-labbel col-sm-4">Codigo:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="produto-codigo" disabled="true" value="#{produtoMB.produto.codigo}" styleClass="form-control" />
+			    </div>
+			</div>
+			
+			<div class="form-group">
+			    <h:outputLabel for="produto-descricao" styleClass="control-labbel col-sm-4">Descricao:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="produto-descricao" value="#{produtoMB.produto.descricao}" styleClass="form-control" required="true" requiredMessage="O nome do usuário não pode estar vazio"/>
+			    </div>
+			    <h:message for="produto-descricao" styleClass="text text-danger" />
+			</div>
+			
+			<div class="form-group">
+			    <h:outputLabel for="fornecedor" styleClass="control-labbel col-sm-4">Fornecedor:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="produto-fornecedor" value="#{produtoMB.produto.fornecedor}" styleClass="form-control" required="true" requiredMessage="A matricula não pode estar vazia"/>
+			    </div>
+			    <h:message for="produto-descricao" styleClass="text text-danger" />
+			</div>		
+	
+	
+			<div class="form-group">
+			    <h:outputLabel for="senha" styleClass="control-labbel col-sm-4">Valor:</h:outputLabel>
+			    <div class="col-sm-4">
+			    	<h:inputText id="usuario-senha" value="#{produtoMB.produto.valor}" styleClass="form-control" required="true" requiredMessage="A Senha não pode estar vazia"/>
+			    </div>
+			    <h:message for="usuario-matricula" styleClass="text text-danger" />
+			</div>	
+			
+			<div class="form-group">
+			    <div class="col-sm-8" align="left">						 
+					 	<h:commandButton action="#{produtoMB.incluirProduto(produtoMB.produto)}" value="Salvar" styleClass="btn-primary" /> 
+				</div>	 
+			</div>
+			
+			<div class="col-sm-updated">
+				<h:outputLink value="listarProduto.xhtml">Ver lista de produto</h:outputLink>
+			</div>
+			
+		   </fieldset>
+		 </div>		 	
+        
+        </h:form>
+        
+       </div>
+       </div>
+       </div>     
+    </h:body>
+</html>
