@@ -12,6 +12,7 @@
 
 		<!-- entidade mapeada -->
 		<class>com.web.model.Usuario</class>
+		<class>com.web.model.Endereco</class>
 
 
 		<properties>

@@ -41,6 +41,16 @@
 						<f:facet name="header">Senha</f:facet>
 						<h:outputText value="#{usuario.senha}"></h:outputText>
 					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Endereço</f:facet>
+						<h:commandButton action="#{enderecoManagedBean.paginaEndereco(usuario)}" rendered="#{usuario.endereco.rua eq null}"
+					value="Incluir Endereço" styleClass="btn btn-primary" >
+						</h:commandButton>
+						<h:commandButton action="#{enderecoManagedBean.paginaEndereco(usuario)}" rendered="#{usuario.endereco.rua ne null}"
+					value="Alterar Endereço" styleClass="btn btn-primary" >
+				</h:commandButton>
+			</h:column>
 
 					<h:column>
 						<f:facet name="header">Update</f:facet>

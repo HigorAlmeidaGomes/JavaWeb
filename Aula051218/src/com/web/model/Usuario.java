@@ -2,11 +2,13 @@ package com.web.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,6 +32,11 @@ public class Usuario {
 	@Column(name = "lastAccess")
 	@Temporal(TemporalType.DATE)
 	private Date ultimoAcesso;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Endereco endereco;
+	
 
 	public int getId() {
 		return id;
@@ -71,4 +78,16 @@ public class Usuario {
 		this.ultimoAcesso = ultimoAcesso;
 	}
 
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+
+
+	
+	
 }
